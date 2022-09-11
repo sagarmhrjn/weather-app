@@ -13,7 +13,5 @@ export class WeatherForecastComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.items)
-  }
+  ngOnInit(): void {}
 }
