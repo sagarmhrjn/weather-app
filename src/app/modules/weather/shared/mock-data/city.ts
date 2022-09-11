@@ -5,7 +5,7 @@ export interface City {
 export const cityList: Array<City> = [
   {
     id: 1,
-    title: 'Lalitpur',
+    title: 'Belfast',
   },
   {
     id: 2,
