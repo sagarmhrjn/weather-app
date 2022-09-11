@@ -1,27 +1,94 @@
-# WeatherApp
+<div id="top"></div>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <h3 align="center">Weather App</h3>
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-## Development server
+<!-- ABOUT THE PROJECT -->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## About The Project
 
-## Code scaffolding
+WeatherApp is a web application project built with Angular and OpenWeatherApi where user can view the current temperature in celsius or fahrenheit and weather condition and also view the weekly temperature and weather condition for the city.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Build
+### Built With
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Angular](https://angular.io/)
+- [OpenWeatherMapApi](https://openweathermap.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [Moment.js](https://momentjs.com/)
 
-## Running unit tests
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<!-- GETTING STARTED -->
 
-## Running end-to-end tests
+## Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To run a local copy up and running follow these simple example steps.
 
-## Further help
+### Prerequisites
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Node v16.10.0(using nvm)
+  ```sh
+  nvm install v16.13.0 (linux/ubuntu)
+  nvm use v16.13.0
+  ```
+- Angular v14.2.2
+  ```sh
+  npm install @angular/cli@14 -g
+  ```
+- Get your [OpenWeatherMapApiKey](https://openweathermap.org/)
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone git@github.com:tetrachromat/employee-attendance.git
+   ```
+2. Install NPM packages for backend
+   ```sh
+   npm install
+   ```
+3. Install NPM packages for client
+   ```sh
+   cd client
+   npm install
+   ```
+4. Run the client server
+   ```sh
+   ng s
+   npx ng s(if angular is not installed globally)
+   ```
+5. To view the application, run the development server https://127.0.0.1:4200/
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Sagar Maharjan - [@my_linkedin](https://www.linkedin.com/in/sagarmaharjan31/) - sagarmaharjan31@gmail.com
+
+<p align="right">(<a href="#top">back to top</a>)</p>
