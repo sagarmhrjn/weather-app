@@ -1,0 +1,64 @@
+<div class="flex items-center justify-center pb-3 text-xl text-cyan-300">
+  <p>{{ weather.current_weather }}</p>
+</div>
+<div class="flex flex-row items-center justify-between text-white py-">
+  <app-weather-icon
+    [code]="weather.icon"
+    [styles]="weatherIconStyle"
+  ></app-weather-icon>
+  <p class="text-5xl">{{ weather.main_weather.temp.toFixed() }}</p>
+  <div class="flex flex-col space-y-2">
+    <div class="flex font-light text-sm items-center justify-center">
+      <fa-icon [icon]="faTemperatureThreeQuarters" class="mr-1"></fa-icon>Real
+      fell:
+      <span class="font-medium ml-1"
+        >{{ weather.main_weather.feels_like.toFixed() }}°</span
+      >
+    </div>
+    <div class="flex font-light text-sm items-center justify-center">
+      <fa-icon [icon]="faDroplet" class="mr-1"></fa-icon>Humidity:
+      <span class="font-medium ml-1"
+        >{{ weather.main_weather.humidity.toFixed() }}°</span
+      >
+    </div>
+    <div class="flex font-light text-sm items-center justify-center">
+      <fa-icon [icon]="faWind" class="mr-1"></fa-icon>Wind:
+      <span class="font-medium ml-1"
+        >{{ weather.wind.speed.toFixed() }}&nbsp;km/h</span
+      >
+    </div>
+  </div>
+</div>
+<div
+  class="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3"
+>
+  <fa-icon [icon]="faSun" class="mr-1"></fa-icon>
+  <p class="font-light">
+    Sunrise:<span class="font-medium ml-1">{{
+      weather.today_overview.sunrise
+        | formatToLocalTime: weather.timezone:"hh:mm a"
+    }}</span>
+  </p>
+  <p class="font-light">|</p>
+  <fa-icon [icon]="faCloudSun" class="mr-1"></fa-icon>
+  <p class="font-light">
+    Sunset:<span class="font-medium ml-1">{{
+      weather.today_overview.sunset
+        | formatToLocalTime: weather.timezone:"hh:mm a"
+    }}</span>
+  </p>
+  <p class="font-light">|</p>
+  <fa-icon [icon]="faSun" class="mr-1"></fa-icon>
+  <p class="font-light">
+    High:<span class="font-medium ml-1"
+      >{{ weather.main_weather.temp_max.toFixed() }}°</span
+    >
+  </p>
+  <p class="font-light">|</p>
+  <fa-icon [icon]="faSun" class="mr-1"></fa-icon>
+  <p class="font-light">
+    Low:<span class="font-medium ml-1"
+      >{{ weather.main_weather.temp_min.toFixed() }}°</span
+    >
+  </p>
+</div>

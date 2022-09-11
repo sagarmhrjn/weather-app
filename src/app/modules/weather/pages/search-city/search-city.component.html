@@ -1,0 +1,41 @@
+<div class="flex flex-row justify-center my-6">
+  <div class="flex flex-row w-3/4 items-center justify-center space-x-4">
+    <form [formGroup]="searchCityForm">
+      <input
+        type="text"
+        placeholder="Search for city..."
+        formControlName="name"
+        class="text-xl font-light p-2 w-full shadow-xl rounded-full focus:outline-none capitalize placeholder:lowercase"
+        required
+        (keyup.enter)="handleSearchClick()"
+      />
+    </form>
+    <fa-icon
+      [icon]="faSearch"
+      class="text-white cursor-pointer transition ease-out hover:scale-125"
+      (click)="handleSearchClick()"
+    ></fa-icon>
+    <fa-icon
+      [icon]="faLocationDot"
+      class="text-white cursor-pointer transition ease-out hover:scale-125"
+      (click)="handleLocationClick()"
+    ></fa-icon>
+  </div>
+  <div class="flex flex-row w-1/4 items-center justify-center">
+    <button
+      name="metric"
+      class="text-xl text-white font-light transition ease-out hover:scale-125"
+      (click)="handleUnitsChange('metric')"
+    >
+      ℃
+    </button>
+    <p class="text-xl text-white mx-1">|</p>
+    <button
+      name="imperial"
+      class="text-xl text-white font-light transition ease-out hover:scale-125"
+      (click)="handleUnitsChange('imperial')"
+    >
+      °F
+    </button>
+  </div>
+</div>

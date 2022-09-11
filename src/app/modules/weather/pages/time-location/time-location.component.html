@@ -1,0 +1,13 @@
+<div class="flex items-center justify-center">
+  <p class="text-white text-xl font-extralight">
+    {{
+      weather.dt
+        | formatToLocalTime: weather.timezone:"dddd, MMMM Do YYYY, h:mm a"
+    }}
+  </p>
+</div>
+<div class="flex items-center justify-center my-3">
+  <p class="text-white text-3xl font-medium">
+    {{ weather.name }},&nbsp;{{ weather.today_overview.country }}
+  </p>
+</div>

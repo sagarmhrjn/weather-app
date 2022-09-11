@@ -1,0 +1,9 @@
+<div class="flex items-center justify-around my-6">
+  <button
+    class="text-white text-lg font-medium"
+    *ngFor="let city of cities"
+    (click)="onCityClick(city.title)"
+  >
+    {{ city.title }}
+  </button>
+</div>

@@ -1,0 +1,30 @@
+<div
+  class="mx-auto max-w-screen-md my-3 py-4 px-32 bg-gradient-to-br h-fit shadow-xl shadow-gray-400"
+  [ngClass]="backgroundColor"
+>
+  <app-top-button (setQuery)="onSetCity($event)"></app-top-button>
+  <app-search-city
+    (setQuery)="onSetCity($event)"
+    (setUnits)="onUnitChange($event)"
+    [units]="units"
+  ></app-search-city>
+  <ng-container *ngIf="weather$ | async as weather; else showLoading">
+    <app-time-location [weather]="weather"></app-time-location>
+    <app-temperature-details [weather]="weather"></app-temperature-details>
+    <app-weather-forecast
+      title="weekly forecast"
+      [items]="weather.daily"
+    ></app-weather-forecast>
+  </ng-container>
+  <ng-template #showLoading>
+    <ng-container *ngIf="!isLoading && (error$ | async) as error; else loader">
+      <p class="text-center text-white text-lg font-medium">
+        <span class="capitalize">'{{ this.query.q }}'</span>&nbsp;{{
+          error.message
+        }}
+      </p>
+    </ng-container>
+
+    <ng-template #loader> <app-spinner></app-spinner> </ng-template>
+  </ng-template>
+</div>
