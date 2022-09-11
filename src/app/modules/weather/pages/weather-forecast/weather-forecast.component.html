@@ -13,6 +13,6 @@
       [styles]="weatherIconStyle"
     ></app-weather-icon>
     <img class="w-12 my-1" />
-    <p class="font-medium">{{item.temp.toFixed()}}°</p>
+    <p class="font-medium">{{ item.temp.toFixed() }}°{{ this.unitName }}</p>
   </div>
 </div>

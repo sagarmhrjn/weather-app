@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faSearch, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { WeatherDataService } from '../../shared/service/weather-data.service';
 
 @Component({
   selector: 'app-search-city',
@@ -16,17 +17,25 @@ export class SearchCityComponent implements OnInit {
   @Output() setQuery: EventEmitter<any> = new EventEmitter();
   @Output() setUnits: EventEmitter<any> = new EventEmitter();
 
-  constructor(private readonly _fb: FormBuilder) {
+  constructor(
+    private readonly _fb: FormBuilder,
+    private readonly _weatherDataService: WeatherDataService
+  ) {
     this.searchCityForm = this._fb.group({
       name: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._weatherDataService.sendUnitName('metric');
+  }
 
   handleUnitsChange(value: any) {
     const selectedUnit = value;
-    if (this.units !== selectedUnit) this.setUnits.emit(selectedUnit);
+    if (this.units !== selectedUnit) {
+      this.setUnits.emit(selectedUnit);
+      this._weatherDataService.sendUnitName(value);
+    }
   }
 
   handleSearchClick() {
@@ -45,7 +54,7 @@ export class SearchCityComponent implements OnInit {
           lon,
         });
       });
-      this.searchCityForm.reset()
+      this.searchCityForm.reset();
     }
   };
 }

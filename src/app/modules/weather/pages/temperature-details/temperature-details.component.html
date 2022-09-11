@@ -1,4 +1,6 @@
-<div class="flex items-center justify-center pb-3 text-xl text-cyan-300 capitalize">
+<div
+  class="flex items-center justify-center pb-3 text-xl text-cyan-300 capitalize"
+>
   <p>{{ weather.current_weather }}</p>
 </div>
 <div class="flex flex-row items-center justify-between text-white py-">
@@ -12,13 +14,15 @@
       <fa-icon [icon]="faTemperatureThreeQuarters" class="mr-1"></fa-icon>Real
       fell:
       <span class="font-medium ml-1"
-        >{{ weather.main_weather.feels_like.toFixed() }}°</span
+        >{{ weather.main_weather.feels_like.toFixed() }}°{{
+          this.unitName
+        }}</span
       >
     </div>
     <div class="flex font-light text-sm items-center justify-center">
       <fa-icon [icon]="faDroplet" class="mr-1"></fa-icon>Humidity:
       <span class="font-medium ml-1"
-        >{{ weather.main_weather.humidity.toFixed() }}°</span
+        >{{ weather.main_weather.humidity.toFixed() }}°{{ this.unitName }}</span
       >
     </div>
     <div class="flex font-light text-sm items-center justify-center">
@@ -51,14 +55,14 @@
   <fa-icon [icon]="faSun" class="mr-1"></fa-icon>
   <p class="font-light">
     High:<span class="font-medium ml-1"
-      >{{ weather.main_weather.temp_max.toFixed() }}°</span
+      >{{ weather.main_weather.temp_max.toFixed() }}°{{ this.unitName }}</span
     >
   </p>
   <p class="font-light">|</p>
   <fa-icon [icon]="faSun" class="mr-1"></fa-icon>
   <p class="font-light">
     Low:<span class="font-medium ml-1"
-      >{{ weather.main_weather.temp_min.toFixed() }}°</span
+      >{{ weather.main_weather.temp_min.toFixed() }}°{{ this.unitName }}</span
     >
   </p>
 </div>
