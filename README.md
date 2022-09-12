@@ -64,7 +64,7 @@ To run a local copy up and running follow these simple example steps.
   ```
   export const environment = {
     // other config
-    weather_map_api_key: 'f52d0d68ae6436506468bcf625d9e8e1',
+    weather_map_api_key: 'your_api_key',
   };
   ```
 
