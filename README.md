@@ -60,13 +60,19 @@ To run a local copy up and running follow these simple example steps.
   ```sh
   npm install @angular/cli@14 -g
   ```
-- Get your [OpenWeatherMapApiKey](https://openweathermap.org/)
+- Get your [OpenWeatherMapApiKey](https://openweathermap.org/) and add it to the environment file
+  ```
+  export const environment = {
+    // other config
+    weather_map_api_key: 'f52d0d68ae6436506468bcf625d9e8e1',
+  };
+  ```
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone git@github.com:tetrachromat/employee-attendance.git
+   git clone git@github.com:sagarmhrjn/weather-app.git
    ```
 2. Install NPM packages for backend
    ```sh
